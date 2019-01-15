@@ -41,19 +41,54 @@ const urls = [
 ]
 
 const getData = async function() {
-  const [ users, posts, albums ] = await Promise.all(urls.map(data(url)));
+  const [ users, posts, albums ] = await Promise.all(urls.map(url =>
+    convertData(url)   
+  ));
   console.log('users', users);
   console.log('posta', posts);
   console.log('albums', albums);
 }
 
-async function data(url){
-  const reqs = await fetch(url);
-  const data = await reqs.json();
-  return data;
+async function convertData(url){
+  const resp = await fetch(url);
+  const data = await resp.json();
+  return data
 }
 
 getData();
 
+//Solution 2
+
+
+
 // #3) Add a try catch block to the #2 solution in order to catch any errors.
 // Now chnage one of the urls so you console.log your error with 'ooooooops'
+
+//Solution 1
+const urls = [
+  'https://jsonplaceholder.typicode.co/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+]
+
+const getData = async function() {
+  try{
+    const [ users, posts, albums ] = await Promise.all(urls.map(url =>
+      convertData(url)   
+    ));
+    console.log('users', users);
+    console.log('posta', posts);
+    console.log('albums', albums);
+  } catch{
+    console.log('ooooooooooops');
+  }
+
+}
+
+async function convertData(url){
+  const resp = await fetch(url);
+  const data = await resp.json();
+  return data
+}
+
+getData();

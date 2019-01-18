@@ -58,8 +58,23 @@ async function convertData(url){
 getData();
 
 //Solution 2
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicode.com/albums'
+]
 
+const getData = async function() {
+  const [ users, posts, albums ] = await Promise.all(urls.map(async function(url){
+    const reqs = await fetch(url);
+    return reqs.json();
+  }));
+  console.log('users', users);
+  console.log('posta', posts);
+  console.log('albums', albums);
+}
 
+getData();
 
 // #3) Add a try catch block to the #2 solution in order to catch any errors.
 // Now chnage one of the urls so you console.log your error with 'ooooooops'
@@ -89,6 +104,30 @@ async function convertData(url){
   const resp = await fetch(url);
   const data = await resp.json();
   return data
+}
+
+getData();
+
+//Solution 2
+const urls = [
+  'https://jsonplaceholder.typicode.com/users',
+  'https://jsonplaceholder.typicode.com/posts',
+  'https://jsonplaceholder.typicod.com/albums'
+]
+
+const getData = async function() {
+  try{
+    const [ users, posts, albums ] = await Promise.all(urls.map(async function(url){
+      const reqs = await fetch(url);
+      return reqs.json();
+    }));
+    console.log('users', users);
+    console.log('posta', posts);
+    console.log('albums', albums);
+  } catch{
+    console.log('Blast it!!!!');
+  }
+
 }
 
 getData();

@@ -69,5 +69,62 @@ calculate();
 
 // BONUS: Make a program that can subtract, multiply, and also divide!
 
+function calculate(){
+    var num1 = prompt('Enter a number');
+    var num2 = prompt('Enter another number');
+    var op = prompt('Pick your operatoin: add, subtract, multiply, or divide').toLowerCase();
+    var ans = 0;
 
+    function numCheck(num1, num2){
+        if(isNaN(num1) || isNaN(num2)){
+            alert('Invalid Input');
+        }
+        else{
+            opCheck(op);
+        }
+    }
+
+    function opCheck(op){
+        switch(op){
+            case 'add':
+                add(num1, num2);
+                break;
+            case 'subtract':
+                sub(num1, num2);
+                break
+            case 'multiply':
+                multi(num1, num2);
+                break
+            case 'divide':
+                div(num1, num2);
+                break
+            default:
+                alert('Invalid Input');
+        }
+    }
+
+    function add(num1, num2){
+        ans = Number(num1) + Number(num2)
+        alert(ans);
+    }
+
+    function sub(num1, num2){
+        ans = Number(num1) - Number(num2)
+        alert(ans);
+    }
+
+    function multi(num1, num2){
+        ans = Number(num1) * Number(num2)
+        alert(ans);
+    }
+
+    function div(num1, num2){
+        ans = Number(num1) / Number(num2)
+        alert(ans);
+    } 
+
+    numCheck(num1, num2);
+}
+
+calculate();
 

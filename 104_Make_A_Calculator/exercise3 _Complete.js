@@ -69,6 +69,7 @@ calculate();
 
 // BONUS: Make a program that can subtract, multiply, and also divide!
 
+//ES5 Solution
 function calculate(){
     var num1 = prompt('Enter a number');
     var num2 = prompt('Enter another number');
@@ -128,3 +129,61 @@ function calculate(){
 
 calculate();
 
+//ES6 Solution
+
+const calculate = () => {
+
+    let num1 = prompt('Enter a number');
+    let op = prompt('Pick your operatoin: add, subtract, multiply, or divide').toLowerCase();
+    let num2 = prompt('Enter a second number');
+
+    const add = (num1, num2) => {
+        alert(num1 + num2);
+    }
+
+    const subtract = (num1, num2) => {
+        alert(num1 - num2);
+    }
+
+    const multiply = (num1, num2) => {
+        alert(num1 * num2);
+    }
+
+    const divide = (num1, num2) => {
+        alert(num1 / num2);
+    }
+
+    const checkOp = (op, num1, num2) => {
+        switch(op){
+            case 'add':
+                add(num1, num2);
+                break;
+            case 'subtract':
+                subtract(num1, num2);
+                break;
+            case 'multiply':
+                multiply(num1, num2);
+                break;
+            case 'divide':
+                divide(num1, num2);
+                break;
+            default:
+                alert('Please enter a valid operation');                    
+        }
+    }
+
+    const numConvert = (op, num1, num2) => {
+        num1 = Number(num1);
+        num2 = Number(num2);
+        checkOp(op, num1, num2);
+    }
+
+    const numCheck = (num1, num2, op) => {
+        if(isNaN(num1) || isNaN(num2)){ alert('Please enter a valid number'); }
+        else{ numConvert(op, num1, num2); }
+    }
+
+    numCheck(num1, num2, op);
+}
+
+calculate();

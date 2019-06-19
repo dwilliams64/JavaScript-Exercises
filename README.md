@@ -1,2 +1,3 @@
-# ZeroMastery-Exercises
-Exercises for Zero Mastery Course
+# JavaScript-Exercises
+
+JavaScript exercises and practice.

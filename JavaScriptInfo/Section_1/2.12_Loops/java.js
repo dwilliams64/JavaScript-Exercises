@@ -83,8 +83,98 @@ Let’s stop on i = 4. The prefix form ++i would increment it and use 5 in the c
 
 The value i = 5 is the last one, because on the next step while(5 < 5) is false.
 
+*/
+
+
+// For each loop write down which values it is going to show. Then compare with the answer.
+
+// Both loops alert same values or not?
+
+// 1. The postfix form:
+
+for (let i = 0; i < 5; i++) alert(i);
+
+// 2. The prefix form:
+
+for (let i = 0; i < 5; ++i) alert(i);
+
+/*
+
+My answer:
+
+1. 0 -> 1 -> 2 -> 3 -> 4
+
+2. 0 -> 1 -> 2 -> 3 -> 4
+
+Both loops are the same value because the return value of i++ and ++i is not used in the comparison like it was
+when using the while loop in the problem above.
+
+JavaScript.info answer:
+
+
+fill in here
 
 
 */
 
+// Use the for loop to output even numbers from 2 to 10
 
+// My answer
+
+for (let i = 2; i < 11; i++) {
+  if(i % 2 != 0) continue;
+  alert(i);
+}
+
+// JavaScript.info answer
+
+for (let i = 2; i <= 10; i++) {
+  if(i % 2 === 0) {
+    alert(i);
+  }  
+}
+
+
+
+// Rewrite the code chaging the for loop to while without altering its behavior (the output should be the same)
+
+for (let i = 0; i < 3; i++) {
+  alert(`number ${i}!`);
+}
+
+// while version:
+let i = 0;
+
+while (i <= 3) {
+  alert(`number ${i}!`);
+  i++
+}
+
+// Answer above same as JavaScript.info
+
+
+/*
+
+Instructions go here
+
+*/
+
+let userInput = prompt("Enter a number greater than 100");
+
+while (typeof userInput != "number") {
+  if (userInput == null || userInput == "") {
+    alert("Goodbye");  
+  } else if (typeof userInput == "string") {
+    alert("Not valid number try again");
+    userInput = prompt("Enter a number greater than 100");
+  }
+}
+
+
+
+console.log(typeof userInput);
+
+while (userInput < 100) {
+  console.log(userInput);
+  userInput = prompt("Please try entering a number again");
+}

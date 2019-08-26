@@ -161,20 +161,27 @@ Instructions go here
 
 let userInput = prompt("Enter a number greater than 100");
 
-while (typeof userInput != "number") {
-  if (userInput == null || userInput == "") {
-    alert("Goodbye");  
-  } else if (typeof userInput == "string") {
-    alert("Not valid number try again");
-    userInput = prompt("Enter a number greater than 100");
-  }
-}
+/*
 
+  answer
 
+*/
 
-console.log(typeof userInput);
+/*
 
-while (userInput < 100) {
-  console.log(userInput);
-  userInput = prompt("Please try entering a number again");
+Instructions
+
+*/
+
+var a = 2 + 2;
+
+switch (a) {
+  case 60:
+    console.log("correct");
+    break;
+  case 5:
+  case 6:
+    alert('wrong');
+    alert('still wrong');
+  break
 }

@@ -135,13 +135,16 @@ P.S. In this task the function should support only natural values of n: integers
 
 */
 
-function pow(x,n) {
-    return x**n;
-}
+let num = prompt("Please enter a number");
+let power = prompt("Please enter a number greater than 1");
 
-console.log(pow(3, 2));
-console.log(pow(3, 3));
-console.log(pow(1, 100));
+function pow(x,n) {
+  if(n < 1) {
+    return "Second value should be greater than 1";
+  } else {
+    return x**n;
+  }  
+}
 
 /*
 

@@ -112,7 +112,19 @@ when using the while loop in the problem above.
 JavaScript.info answer:
 
 
-fill in here
+The answer: from 0 to 4 in both cases.
+
+ for (let i = 0; i < 5; ++i) alert( i );
+
+for (let i = 0; i < 5; i++) alert( i );
+That can be easily deducted from the algorithm of for:
+
+Execute once i = 0 before everything (begin).
+Check the condition i < 5
+If true – execute the loop body alert(i), and then i++
+The increment i++ is separated from the condition check (2). That’s just another statement.
+
+The value returned by the increment is not used here, so there’s no difference between i++ and ++i.
 
 
 */
@@ -155,15 +167,45 @@ while (i <= 3) {
 
 /*
 
-Instructions go here
+Write a loop which prompts for a number greater than 100. If the visitor enters another number – ask them to input again.
+
+The loop must ask for a number until either the visitor enters a number greater than 100 or cancels the input/enters an empty line.
+
+Here we can assume that the visitor only inputs numbers. There’s no need to implement a special handling for a non-numeric input in this task.
 
 */
 
-let userInput = prompt("Enter a number greater than 100");
+
+let userInput = prompt("Please enter a number greater than 100", "0");
+
+do {
+  userInput = prompt("Please enter a number greater than 100", "0");
+
+} while (userInput < 100);
+
+
+
+let userInput = prompt("Please enter a number greater than 100", "0");
+
+while(userInput < 100) {
+  userInput = prompt("Please enter a number greater than 100", "0");  
+}
+
 
 /*
 
-  answer
+JavaScript.info:
+
+let num;
+
+do {
+  num = prompt("Enter a number greater than 100?", 0);
+} while (num <= 100 && num);
+The loop do..while repeats while both checks are truthy:
+
+1. The check for num <= 100 – that is, the entered value is still not greater than 100.
+2. The check && num is false when num is null or a empty string. Then the while loop stops too.
+P.S. If num is null then num <= 100 is true, so without the 2nd check the loop wouldn’t stop if the user clicks CANCEL. Both checks are required.
 
 */
 
@@ -185,3 +227,19 @@ switch (a) {
     alert('still wrong');
   break
 }
+
+/*
+
+An integer number greater than 1 is called a prime if it cannot be divided without a remainder by anything except 1 and itself.
+
+In other words, n > 1 is a prime if it can’t be evenly divided by anything except 1 and n.
+
+For example, 5 is a prime, because it cannot be divided without a remainder by 2, 3 and 4.
+
+Write the code which outputs prime numbers in the interval from 2 to n.
+
+For n = 10 the result will be 2,3,5,7.
+
+P.S. The code should work for any n, not be hard-tuned for any fixed value.
+
+*/

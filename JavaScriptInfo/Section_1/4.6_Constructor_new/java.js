@@ -77,7 +77,7 @@ function Calculator() {
         return this.num1 + this.num2;
     }
 
-    this.mul = function(userInput1, userInput2) {
+    this.mul = function() {
         return this.num1 * this.num2;
     }
 }

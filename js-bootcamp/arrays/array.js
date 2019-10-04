@@ -64,3 +64,31 @@ console.log('\r');
 notes.forEach(function(item, idx){
     console.log(`${idx}: ${item}`);
 });
+
+console.log('\r');
+
+// Count to 10 using for loop
+for (let i = 0; i <= 10; i++) {
+    console.log('Count to 10: ', i);
+}
+
+console.log('\r');
+
+// Count to 0 starting with 5
+for (let i = 5; i >= 0; i--) {
+    console.log('Count to 0: ', i);
+}
+
+console.log('\r');
+
+// Print items in array in order using for loop
+for (let i = 0; i < notes.length; i++) {
+    console.log(`Item ${i}: `, notes[i]);
+}
+
+console.log('\r');
+
+// Print items in array in reverse order using for loop
+for (let i = notes.length - 1; i >= 0; i--) {
+    console.log(`Item ${i}: `, notes[i]);
+}

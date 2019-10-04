@@ -11,7 +11,18 @@
 // Challenge 3:
 /*
 
-Print the following:
+Print the following using forEach method:
+
+1. First item of array
+2. Second item of array
+and so on
+
+*/
+
+// Challenge 4:
+/*
+
+Print the following using for loop:
 
 1. First item of array
 2. Second item of array
@@ -33,6 +44,12 @@ console.log('\r');
 todos.forEach(function(todo, idx) {
     console.log(`${idx + 1}. ${todo}`)
 });
+
+console.log('\r');
+
+for (let i = 0; i < todos.length; i++) {
+    console.log(`${i + 1}. ${todos[i]}`);
+}
 
 // console.log(`Todo: ${todos[0]}`);
 // console.log(`Todo: ${todos[todos.length - 2]}`);

@@ -35,6 +35,8 @@ console.log('UnShift: ', notes.unshift('Note 0'));
 console.log('UnShift: ',notes);
 console.log('\r');
 
+// splice() method modifies/mutates the contents of an array
+
 // Removes item in array. First argument is the position. Second is how many items you want to remove
 console.log('Splice Remove: ', notes.splice(1, 1));
 
@@ -92,3 +94,117 @@ console.log('\r');
 for (let i = notes.length - 1; i >= 0; i--) {
     console.log(`Item ${i}: `, notes[i]);
 }
+
+console.log('\r');
+
+// indexOf();
+// Returns the index position of an array item
+console.log(notes);
+console.log('Index of Note 0: ', notes.indexOf('Note 0')); // 0 the position of 'Note 0'
+
+console.log('\r');
+
+// If an item is not found -1 is returned
+console.log(notes);
+console.log('Index of item not in array: ',notes.indexOf( 'Note 1000')); // -1
+
+console.log('\r');
+
+// If there are duplicate items in the array, indexOf() will return the first index of the occurance of the duplicate item
+console.log(notes.unshift('Note 0'));
+console.log(notes);
+console.log('First occurance of Note 0: ', notes.indexOf('Note 0')); // 0
+
+console.log('\n');
+
+// indexOf() when finding objects
+console.log('/// objects in array ////');
+console.log('\r');
+
+const array1 = [
+    {},
+    {
+        title: 'Wash dishes',
+        body: 'Remember to was dishes'
+    },
+
+    {
+        title: 'Clean bathroom',
+        body: 'Rembmer to unclog drains and clean bathtub'
+    },
+
+    {
+        title: 'Pay electric bill',
+        body: 'Electric bill is due'
+    }
+]
+
+console.log('indexOf object in array: ', array1.indexOf({})); // -1
+
+console.log('\r');
+
+// We are getting -1 because the indexOf() uses ===  to compare items when it iterates over an array
+// An object is only equal to itself if the object reference is pointing to the same object in memory
+
+// Example
+console.log('Two diffrent objects: ', {} === {}); // false
+
+// We get false because we are comparing two different objects in memory
+
+console.log('\r');
+
+let obj1 = {};
+let obj2 = obj1;
+console.log('Two variables referencing the same object: ',obj1 === obj2); // true
+
+// We get true because both variables obj1 and obj2 are pointing to the same object in memory
+
+console.log('\n');
+
+// findIndex()
+
+console.log('///// findIndex() //////');
+
+// Used to find the index of an array item
+// More flexiable than indexOf as we can use findIndex to find object properties
+// Much like indexOf, -1 is returned if an item is not found
+// Works great for when you need the index of the item
+
+const index = array1.findIndex(function(elm, idx) {
+    console.log(`${idx}: `, elm);
+    return elm.title === 'Pay electric bill'; // returns true and stores the found index in variable
+});
+
+console.log('Found index: ', index);
+
+// We want findIndex() to return a truthy or falesy statment for the return value
+// If true is returned the index of the array item is returned and the function stops (it does not continue to search)
+// If false is returned then -1 is returned
+
+console.log('\n');
+
+// find()
+console.log('///// find() //////');
+
+// Works similar to findIndex
+// Returns the array item instead of index 
+// If item is not found undefined is returned
+// Works great if you are just wanting to find an item without its index
+// Index is an optional argument if you need it
+// Return is either true or false like findIndex()
+// If true then found item is returned, if false then undefined is returned
+
+const title = array1.find(function(elm, idx) {
+    console.log(`${idx}: `, elm);
+    
+    if (elm.title != undefined) {
+        return elm.title.toUpperCase() === 'Pay electric bill'.toUpperCase(); // return stores array item
+    }   
+    
+});
+
+console.log('Found title: ', title);
+
+// Note: When passing arrays into functions the argument that gets used in the function is still pointing at the orignal array
+// That means much like objects getting passed into a function you have access and can manipulate that array inside of a function
+

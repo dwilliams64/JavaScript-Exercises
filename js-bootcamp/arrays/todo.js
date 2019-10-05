@@ -1,3 +1,80 @@
+const todos = [
+    {
+        text: 'study JavaScript',
+        completed: true
+    }, {
+        text: 'finish Sass exercise',
+        completed: false
+    }, {
+        text: 'complete SVG exercise',
+        completed: false       
+    }, {
+        text: 'feed the monkey',
+        completed: true      
+    }, {
+        text: 'beat mega man x9',
+        completed: false
+    }
+];
+
+
+// Create function that removes a todo by text value
+
+function removeTodo(lstTodo, txtTodo) {
+
+    const rmvIdx = lstTodo.findIndex(function(elm) {
+        return elm.text.toLowerCase() === txtTodo.toLowerCase();        
+    });   
+
+    if (rmvIdx != -1) {
+        return lstTodo.splice(rmvIdx, 1);
+    }
+}
+
+removeTodo(todos, 'complete SVG exercise');
+console.log(todos);
+console.log('\r');
+removeTodo(todos, 'doggie');
+console.log(todos);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Challenge 1:
 // Create an array with five todos
 // Print message: You have x todos (x is the length of array)
@@ -30,26 +107,26 @@ and so on
 
 */
 
-const todos = ['study JavaScript', 'finish Sass exercise', 'complete SVG exercise', 'feed the monkey', 'beat mega man x9'];
-
-todos.splice(2, 1);
-todos.push('do 50 jumping jax');
-todos.shift();
-
-console.log(todos);
-console.log(`You have ${todos.length} todos!`);
-
-console.log('\r');
-
-todos.forEach(function(todo, idx) {
-    console.log(`${idx + 1}. ${todo}`)
-});
-
-console.log('\r');
-
-for (let i = 0; i < todos.length; i++) {
-    console.log(`${i + 1}. ${todos[i]}`);
-}
+// const todos = ['study JavaScript', 'finish Sass exercise', 'complete SVG exercise', 'feed the monkey', 'beat mega man x9'];
+// 
+// todos.splice(2, 1);
+// todos.push('do 50 jumping jax');
+// todos.shift();
+// 
+// console.log(todos);
+// console.log(`You have ${todos.length} todos!`);
+// 
+// console.log('\r');
+// 
+// todos.forEach(function(todo, idx) {
+    // console.log(`${idx + 1}. ${todo}`)
+// });
+// 
+// console.log('\r');
+// 
+// for (let i = 0; i < todos.length; i++) {
+    // console.log(`${i + 1}. ${todos[i]}`);
+// }
 
 // console.log(`Todo: ${todos[0]}`);
 // console.log(`Todo: ${todos[todos.length - 2]}`);

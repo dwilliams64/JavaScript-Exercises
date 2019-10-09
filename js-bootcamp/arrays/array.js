@@ -1,3 +1,5 @@
+'use strict'
+
 const notes = ['Note 1', 'Note 2', 'Note 3'];
 
 // Get length of array (how many items in array)
@@ -207,4 +209,110 @@ console.log('Found title: ', title);
 
 // Note: When passing arrays into functions the argument that gets used in the function is still pointing at the orignal array
 // That means much like objects getting passed into a function you have access and can manipulate that array inside of a function
+
+console.log('\n');
+
+///////////////////// filter() //////////////////////
+
+console.log('////// filter() ////////');
+
+// filter() much like find() and findIndex() we are returning a boolean
+// filter() generates an array based on its return value
+// if the boolean in the call back function returns true that item in the array is added to our filter() array
+// if the boolean in the call back function returns false then that array item is not added to our filter() array
+// First argument on call back function is the array item
+// Second argument on call back function is the arrray item index
+
+let array2 =  [
+    {
+        title: 'Walk cat',
+        body: 'Walk Fido at 11pm'
+    },
+
+    {
+        title: 'Clean basement',
+        body: 'I would like to finish by this weekend'
+    },
+
+    {
+        title: 'Pay gas bill',
+        body: 'Gas bill is $28.56 this month'
+    }
+];
+
+const arrayFilter = array2.filter(function (elm, idx) {
+    const title = elm.title.includes('aS'.toLowerCase());
+    const body = elm.title.includes('aS'.toLowerCase());
+
+    return title || body;
+
+});
+
+console.log('Filtered array: ', arrayFilter);
+
+console.log('\n');
+
+///////////// sort() /////////////////////////////
+
+console.log('/////////////// sort() /////////////////////');
+
+// sort() on simple array with no arguments
+
+let months = ['March', 'Jan', 'Feb', 'Dec'];
+
+console.log('Sort months' , months.sort()); // [ 'Dec', 'Feb', 'Jan', 'March' ]
+
+// Much like indexOf() sort() by itself works great on simple arrays
+// But with more complex array elements such as objects it does't work so great by itself
+// Luckly sort() allows use to have a call back function to work with more complex array elements
+// Call back function is called compareFunction
+
+// Call back function takes two parameters
+// These parameters are usually named a and b
+
+// Call back function returns 1 of 3 values:
+// 1. -1 which means a comes before b
+// 2. 1 which means b comes before a
+// 3. 0 which means order is unchanged
+
+// sort() doesn't return a final value.  It just sorts the array in place when called on
+
+console.log('\r');
+
+let array3 =  [
+    {
+        title: 'Fat fish',
+        body: 'I love fish which is my fav dish'
+    },
+
+    {
+        title: 'Eric B and Rakim',
+        body: 'Follow the leader!!!!'
+    },
+
+    {
+        title: 'Ao Go Power Rangers',
+        body: 'Billy chaos'
+    }
+];
+
+array3.sort(function(a, b) {    
+
+    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+    } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+});
+
+console.log('Object sort: ', array3);
+
+
+
+
+
+
 

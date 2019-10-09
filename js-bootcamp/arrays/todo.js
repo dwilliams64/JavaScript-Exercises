@@ -31,11 +31,40 @@ function removeTodo(lstTodo, txtTodo) {
     }
 }
 
-removeTodo(todos, 'complete SVG exercise');
+// Write a function that gets the todos that have a completed value of false
+
+function getIncomplete(todos) {
+    return todos.filter(function(elm) {
+        return !elm.completed;
+    });
+}
+
+// Write a function that puts all incomplete todos at the top (false value)
+// And puts all completed items at the bottom of the list (true value)
+
+function sortTodos(todos) {
+    todos.sort(function(a, b) {
+        if (a.completed > b.completed) {
+            return 1;
+        } else if (a.completed < b.completed) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+}
+
+
+sortTodos(todos);
 console.log(todos);
-console.log('\r');
-removeTodo(todos, 'doggie');
-console.log(todos);
+
+// console.log(getIncomplete(todos));
+
+// removeTodo(todos, 'complete SVG exercise');
+// console.log(todos);
+// console.log('\r');
+// removeTodo(todos, 'doggie');
+// console.log(todos);
 
 
 

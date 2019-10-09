@@ -23,7 +23,22 @@ const notes = [
     // return note[idx];
 // }
 
+// function findNote(note, title) {
+    // return note.find(function(elm, idx) {
+        // return elm.title.toLowerCase() ===  title.toLowerCase();
+    // });
+// }
+// 
+// console.log(findNote(notes, 'Pay electric bill'));
+// console.log(findNote(notes, 'balls'));
 
+function findNotes(notes, query) {
+    return notes.filter(function(elm, idx) {
+        const title = elm.title.toLowerCase().includes(query.toLowerCase());
+        const body = elm.body.toLowerCase().includes(query.toLowerCase());
+        return title || body;
+    });
+}
 
-console.log(findNote(notes, 'Pay electric bill'));
-console.log(findNote(notes, 'balls'));
+console.log(findNotes(notes, 'uncLog DraIns'));
+console.log(findNotes(notes, 'balls'));

@@ -47,6 +47,7 @@ console.log('\r');
 
 // Adds item to an array. First argumen is the position. Second is how many items to be removed (0 means no items to be removed)
 // Last argument is what we want to add.
+// We can use this to replace items as well. Just modify the second argument
 console.log('Splice add Note 5: ', notes.splice(1, 0, 'Note 5'));
 
 console.log('Splice add Note 5: ', notes);

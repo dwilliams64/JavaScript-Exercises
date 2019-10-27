@@ -3,6 +3,7 @@
 // A 90-100, B 80-89, C 70-79, D 60-69, F 0-59
 
 function gradeCalc(score, totalScore) {
+    
     const percent = Math.round((score / totalScore) * 100); 
     let letterGrade;   
 

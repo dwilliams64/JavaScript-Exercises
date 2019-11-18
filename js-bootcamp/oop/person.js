@@ -27,6 +27,8 @@ const Person = function(firstName, lastName, age) {
 
 
 // Creates indivual people
+// These are known as instances
+// person1 is an instance of the Person constructor
 const person1 = new Person('Chris', 'Redfield', 45);
 
 const person2 = new Person('Albert', 'Wesker', 300);

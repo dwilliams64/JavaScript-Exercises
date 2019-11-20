@@ -14,30 +14,27 @@
 const Hangman = function(word, tries) {
     this.word = word.toLowerCase().split('');
     this.tries = tries;    
-    this.guessLetters = ['C'];
+    this.guessLetters = ['d', 'o'];
 }
 
 Hangman.prototype.getPuzzle = function () {
-    let puzzle = [];
+    let puzzle = '';
 
-    const word = this.word;
-
-    let guessLetters = this.guessLetters;
-
-    
-
-    word.forEach(function(letter, idx) {
-        console.log(guessLetters[idx])
-        if (letter === guessLetters[idx]) {
-            puzzle.push(letter);
+    this.word.forEach((letter) => {
+        if (this.guessLetters.includes(letter) || letter === ' ') {
+            puzzle += letter;
         } else {
-            puzzle.push('*');
+            puzzle += '*';
         }
     });
 
+    
+
+    
+
     console.log(puzzle)
 
-    // return puzzle.join('');
+    return puzzle;
 }
 
 const game1 = new Hangman('Dog', 2);

@@ -10,13 +10,14 @@ class Person {
         this.age = age;
     }
 
-    // Prototype methods
+    // Prototype method
     getBio() {
         let bio = `${this.firstName} is ${this.age} years old.`
 
         return bio;        
     }
 
+    // Prototype method
     setName(fullName) {
         const names = fullName.split(' '); // Splits name into an array ( ['Jill', 'Valintine'] )
         this.firstName = names[0]; // Jill

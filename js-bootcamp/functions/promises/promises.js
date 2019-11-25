@@ -37,9 +37,9 @@ const newPromise = (data) => new Promise((resolve, reject) => {
     }, 2000);
 });
 
-const myNewPromise = newPromise(123);
 
-myNewPromise.then((data) => {
+// Since we are using a function we can just chain on .then method to function
+newPromise(123).then((data) => {
     console.log(data)
 }, (err) => {
     console.log(err);

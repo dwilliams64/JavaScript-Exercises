@@ -18,9 +18,29 @@ myPromise.then((message) => {
 
    // message is whatever we passed in the resolve(...) function above
    // works the same way with reject(...) 
-   console.log(`Missin was a ${message}`)
+   console.log(`Mission was a ${message}`)
 }, (err) => {
 
     // if the promise returns reject(...) we can handle the error in here
     console.log(`Mission ${err}`);
+});
+
+console.log('\n')
+
+// In the above example we have no way of passing in arguments to our promise
+// We can do by using a closure
+
+const newPromise = (data) => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(`My success data: ${data}`);
+        reject(`My reject data: ${data}`);
+    }, 2000);
+});
+
+const myNewPromise = newPromise(123);
+
+myNewPromise.then((data) => {
+    console.log(data)
+}, (err) => {
+    console.log(err);
 });

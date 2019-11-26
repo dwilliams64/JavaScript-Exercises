@@ -1,4 +1,4 @@
-// Closures gives access to an outer functions scrope from an inner function
+// Closures gives access to an outer functions scope from an inner function
 // They can be used for object data privacy, event handlers and callbacks, currying, etc.
 
 // Example 1

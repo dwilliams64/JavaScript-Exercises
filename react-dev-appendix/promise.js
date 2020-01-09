@@ -80,6 +80,10 @@ myFirstPromise
     .then(newValue => console.log(newValue))
     .catch(rejectValue => console.log(rejectValue));
 
+
+// Note: .then returns a resolved promise. This is why we are able to chain
+// multiple .then and pass a resolved promise from another .then to the next .then    
+
 /*
 
 Result in console:

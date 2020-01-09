@@ -9,10 +9,10 @@ const myArray = [1, 2, 3, 4];
 let newArray = myArray.map(elm => elm + 2);
 
 // Old array is not mutated
-console.log(myArray);
+console.log(myArray); // [1, 2, 3, 4]
 
 // New returned array
-console.log(newArray);
+console.log(newArray); // [2,4,6,8]
 
 // We can also just re-map elements in an array without passing an element as an argument
 let otherArray = myArray.map(() => "b");

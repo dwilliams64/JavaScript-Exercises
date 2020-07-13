@@ -1,3 +1,6 @@
+// After solving the following with the reduce function try
+// solving without the reduce function.
+
 // 1. Turn an array of numbers into a total of all the numbers
 
 function total(arr) {
@@ -5,6 +8,19 @@ function total(arr) {
 }
  
 console.log(total([1,2,3])); // 6
+
+
+// 1. Bonus
+// Turn an array of numbres into a product of all numbers (multiply all numbers)
+
+function product(arr) {
+    // your code here
+}
+ 
+console.log(product([2,4,5])); // 40
+
+
+
 
 // 2. Turn an array of numbers into a long string of all those numbers.
 

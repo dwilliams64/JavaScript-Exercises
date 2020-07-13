@@ -8,6 +8,28 @@ function total(arr) {
  
 console.log(total([1,2,3])); // 6
 
+// Alternate syntax solution
+
+function total(arr) {
+  // your code here
+
+  return arr.reduce((sum, num) => sum += num);
+}
+
+
+// 1. Bonus
+// Turn an array of numbres into a product of all numbers (multiply all numbers)
+
+function product(arr) {
+  // your code here
+
+  return arr.reduce((product, num) => {
+    return product * num;
+  }, 1);
+}
+
+console.log(product([2,4,5])); // 40
+
 
 // 2. Turn an array of numbers into a long string of all those numbers.
 
@@ -20,6 +42,19 @@ function stringConcat(arr) {
 }
  
 console.log(stringConcat([1,2,3])); // "123"
+
+// Other syntax solution
+
+function stringConcat(arr) {
+  // your code here
+
+  return arr.reduce((str, elm) => {
+    // Does the same thing as other code
+    // just a differnt syntax
+
+    return str += elm
+  }, ""); 
+}
 
 
 // 3. Turn an array of voter objects into a count of how many people voted
@@ -48,3 +83,20 @@ function totalVotes(arr) {
 ];
 
 console.log(totalVotes(voters)); // 7
+
+// Using type coercion for solution
+
+function totalVotes(arr) {
+  // your code here
+
+  return arr.reduce((tally, votes) => {
+    // all voted properties are boolean values
+
+    // In JavaScript when you perform an operation with
+    // numbers and booleans the boolean will be convered to a number
+
+    // the numerical value for true is 1 and for false 0
+    
+    return tally += votes.voted ;
+  }, 0);    
+}

@@ -12,3 +12,5 @@ console.log(typeof undefined); // undefined
 
 // Weird quirk in the language that is an error
 console.log(typeof null); // object
+
+// Returns a string value

@@ -17,11 +17,26 @@ const userArray = [
     "Yoshi"
 ];
 
-userArray.forEach((user) => {
-    const card = document.createElement("li");
-    card.textContent = user;
-    userDisplay.appendChild(card);
-});
+const filter = (userQuery) => {
+    
+    let filteredUsers = userArray.filter((user) => {
+        return user.toLocaleLowerCase().includes(userQuery);
+    });
+
+    userDisplay.innerHTML = "";
+    
+    render(filteredUsers);
+}
+
+const render = (users) => {
+    users.forEach((user) => {
+        const card = document.createElement("li");
+        card.textContent = user;
+        userDisplay.appendChild(card);
+    });
+}
+
+
 
 window.addEventListener("scroll", (e) => {   
 
@@ -33,7 +48,10 @@ window.addEventListener("scroll", (e) => {
     
 });
 
-userSearch.addEventListener("keypress", (e) => {
-    let letter = e.currentTarget.value.toLowerCase();
-    console.log(letter)
+userSearch.addEventListener("keyup", (e) => {
+    let userQuery = e.currentTarget.value.toLowerCase();
+    // console.log(userQuery)
+    filter(userQuery);
 });
+
+render(userArray);

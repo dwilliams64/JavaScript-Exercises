@@ -32,7 +32,8 @@ li {
     width: 80%;
     max-width: 900px;
     margin: 0 auto;
-    text-align: center;       
+    text-align: center;
+    /* border: 2px solid black;        */
 }
 
 #nav-bar {    

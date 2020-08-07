@@ -89,26 +89,17 @@ h1 {
     /* padding: 0 1em; */
 }
 
-.convert__button {
-    margin-bottom: 2em;
-}
-
-.btn {
-    padding: 1em 0;
-    width: 90%;
-    border-radius: 2px;
-    border: unset;
-}
-
-.btn__convert {
-    background: linear-gradient(to left, var(--color-g-1), var(--color-g-2) );
-    color: var(--font-color);
-    letter-spacing: 2px;
-}
 
 .convert__select {
     width: 90%;
     padding: .25em;
+}
+
+.disable-select {
+    opacity: .8;
+    background: linear-gradient(to left, #0d3d75, #251FDE);
+    background-color: #DE851F;
+    background-blend-mode: multiply;
 }
 
 @media (min-width: 500px) {
@@ -142,15 +133,12 @@ h1 {
         display: flex;
     }
 
-    .convert__button {
-        width: 50%;
-    }
+
 
     .convert__options {
-        width: 50%;
+        max-width: 700px;
+        width: 100%;
     }
 
-    .btn {
-        padding: .55em;
-    }
+
 }

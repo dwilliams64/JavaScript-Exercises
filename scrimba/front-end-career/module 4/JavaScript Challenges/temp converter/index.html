@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -19,23 +20,20 @@
 
         <section class="temp">
             <div class="temp__input">
-                <label class="temp__label temp__label-input" for="temp-field">Fahrenheit</label>
-                <input class="temp__field" id="temp-field" type="text" required>
+                <label id="input-label" class="temp__label temp__label-input" for="temp-field">Fahrenheit</label>
+                <input id="input-temp" class="temp__field" id="temp-field" type="text" required>
             </div>
 
             <div class="temp__result">
-                <div class="temp__label temp__label-result">Celsius</div>
-                <div class="temp__result">300</div>
+                <div id="result-label" class="temp__label temp__label-result">Celsius</div>
+                <div id="result-temp" class="temp__result">300</div>
             </div>
         </section>
     
         <div class="convert">
-            <div class="convert__button">
-                <button id="temp-convert" class="btn btn__convert">Convert</button>
-            </div>
 
             <div class="convert__options">
-                <select name="temps" id="temps" class="convert__select">
+                <select name="convert temps" id="convert-temps" class="convert__select">                    
                     <option value="f-to-c">Fahrenheit to Celsius</option>
                     <option value="c-to-f">Celsius to Fahrenheit</option>
                     <option value="f-to-k">Fahrenheit to Kelvin</option>
@@ -47,8 +45,5 @@
 
         </div>
     </div>
-
-
-
 </body>
 </html>

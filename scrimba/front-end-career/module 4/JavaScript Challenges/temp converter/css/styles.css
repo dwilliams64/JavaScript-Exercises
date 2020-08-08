@@ -67,6 +67,7 @@ h1 {
 
 .temp {
     margin-bottom: 3em;
+    border: 2px solid pink;
     /* padding: 0 1em; */
 }
 

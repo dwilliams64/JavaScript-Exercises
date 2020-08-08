@@ -48,7 +48,7 @@ window.addEventListener("scroll", (e) => {
     
 });
 
-userSearch.addEventListener("keyup", (e) => {
+userSearch.addEventListener("input", (e) => {
     let userQuery = e.currentTarget.value.toLowerCase();
     // console.log(userQuery)
     filter(userQuery);

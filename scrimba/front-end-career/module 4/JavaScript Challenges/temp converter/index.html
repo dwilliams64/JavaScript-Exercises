@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="index.js" defer></script>
-    <title>Document</title>
+    <title>Temperature Converter</title>
 </head>
 <body>
 
@@ -21,12 +21,12 @@
         <section class="temp">
             <div class="temp__input">
                 <label id="input-label" class="temp__label temp__label-input" for="temp-field">Fahrenheit</label>
-                <input id="input-temp" class="temp__field" id="temp-field" type="text" required>
+                <input id="input-temp" class="temp__field temp__field-input" type="text" maxlength="10" required>
             </div>
 
             <div class="temp__result">
                 <div id="result-label" class="temp__label temp__label-result">Celsius</div>
-                <div id="result-temp" class="temp__result">300</div>
+                <input id="result-temp" class="temp__field temp__field-result" type="text" disabled>
             </div>
         </section>
     

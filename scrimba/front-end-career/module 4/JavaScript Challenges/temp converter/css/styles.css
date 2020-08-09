@@ -53,8 +53,7 @@ h1 {
     width: 80%;
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 1em;
-    /* border: 1px solid white; */
+    padding: 0 1em;    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -66,9 +65,7 @@ h1 {
 }
 
 .temp {
-    margin-bottom: 3em;
-    border: 2px solid pink;
-    /* padding: 0 1em; */
+    margin-bottom: 3em;    
 }
 
 .temp__label {
@@ -77,19 +74,26 @@ h1 {
 }
 
 .temp__field {
-    margin-bottom: 2em;
-    max-width: 500px; 
-    width: 90%;
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 1px;    
+}
+
+.temp__field-input {
+    margin-bottom: 2em;    
     border: 0;
     border-radius: 5px;
     padding: .25em;
-    letter-spacing: 1px;
+    
 }
 
-.convert {
-    /* padding: 0 1em; */
+.temp__field-result {    
+    background: none;
+    border: none;
+    color: var(--font-color);    
 }
-
 
 .convert__select {
     width: 90%;
@@ -111,35 +115,33 @@ h1 {
     h1 {
         font-size: var(--h1-large);
     }
+}
 
-    .temp {
-        display: flex;             
+@media (min-width: 310px) {
+
+    .convert__select {
+        text-align: center;
     }
 
-    .temp__input {
-        width: 75%;
-    }
-
-    .temp__result {
-        width: 25%;
-        align-self: center;
-        display: flex;
-        flex-direction: column;        
+    .convert__options {
+        max-width: 400px;
+        width: 85%;
+        margin: 0 auto;
     }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 672px) {
 
-    .convert {
-        display: flex;
+    .temp {
+        display: flex; 
+        justify-content: space-between;            
     }
 
-
-
-    .convert__options {
-        max-width: 700px;
-        width: 100%;
+    .temp__input {
+        width: 50%;
     }
 
-
+    .temp__result {
+        width: 50%;
+    }
 }
